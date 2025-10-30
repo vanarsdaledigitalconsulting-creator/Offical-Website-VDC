@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Digital Consulting - Interactive Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0f',
+                        'dark-card': '#151520',
+                        'dark-hover': '#1a1a2e',
+                        'dark-border': '#252540',
+                        'primary-neon': '#00d4ff',
+                        'primary-blue': '#2563eb',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #fff; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(to right, #00d4ff, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid-pattern { background-image: linear-gradient(to right, #252540 1px, transparent 1px), linear-gradient(to bottom, #252540 1px, transparent 1px); background-size: 4rem 4rem; opacity: 0.1; }
+        .glow-text { text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+        button { cursor: pointer; }
+        .question-option { transition: all 0.3s; }
+        .question-option:hover { transform: translateX(10px); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark-card/95 backdrop-blur-md border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" onclick="scrollToSection(event, '#home')" class="text-xl font-bold text-white hover:text-primary-neon transition-colors">
+                    Van Digital Consulting
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" onclick="scrollToSection(event, '#home')" class="text-gray-300 hover:text-primary-neon transition-colors">Home</a>
+                    <a href="#services" onclick="scrollToSection(event, '#services')" class="text-gray-300 hover:text-primary-neon transition-colors">Services</a>
+                    <a href="#about" onclick="scrollToSection(event, '#about')" class="text-gray-300 hover:text-primary-neon transition-colors">About</a>
+                    <a href="#contact" onclick="scrollToSection(event, '#contact')" class="text-gray-300 hover:text-primary-neon transition-colors">Contact</a>
+                    <button onclick="scrollToCalendar()" class="px-6 py-2 bg-gradient-to-r from-primary-blue to-primary-neon text-white rounded-full font-semibold text-sm shadow-lg hover:shadow-primary-neon/50 transition-all">Book a Call</button>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-primary-neon" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-dark-border">
+            <div class="px-4 py-4 space-y-2">
+                <a href="#home" onclick="scrollToSection(event, '#home'); toggleMobileMenu();" class="block py-2 text-gray-300 hover:text-primary-neon">Home</a>
+                <a href="#services" onclick="scrollToSection(event, '#services'); toggleMobileMenu();" class="block py-2 text-gray-300 hover:text-primary-neon">Services</a>
+                <a href="#about" onclick="scrollToSection(event, '#about'); toggleMobileMenu();" class="block py-2 text-gray-300 hover:text-primary-neon">About</a>
+                <a href="#contact" onclick="scrollToSection(event, '#contact'); toggleMobileMenu();" class="block py-2 text-gray-300 hover:text-primary-neon">Contact</a>
+                <button onclick="scrollToCalendar(); toggleMobileMenu();" class="w-full mt-4 px-6 py-2 bg-gradient-to-r from-primary-blue to-primary-neon text-white rounded-full">Book a Call</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-bg pt-20">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-card to-dark-bg"></div>
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                We Run Ads That Book<br/>
+                <span class="gradient-text glow-text">Qualified Estimates</span><br/>
+                <span class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-300 mt-4 block">
+                    Directly Into Your Calendar
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+                <span class="font-semibold text-white">Stop wasting money on ads that don't book.</span> We create and manage your paid ad campaigns that bring qualified leads directly into your calendar—automatically.
+            </p>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
+                <div class="bg-dark-card rounded-xl p-4 border border-dark-border hover:border-primary-neon/50 transition-all">
+                    <div class="text-3xl font-bold text-primary-neon">5X</div>
+                    <div class="text-sm text-gray-400 mt-1">More Estimates Booked</div>
+                </div>
+                <div class="bg-dark-card rounded-xl p-4 border border-dark-border hover:border-primary-neon/50 transition-all">
+                    <div class="text-3xl font-bold text-primary-neon">$10+</div>
+                    <div class="text-sm text-gray-400 mt-1">Cost Per Qualified Lead</div>
+                </div>
+                <div class="bg-dark-card rounded-xl p-4 border border-dark-border hover:border-primary-neon/50 transition-all">
+                    <div class="text-3xl font-bold text-primary-neon">100%</div>
+                    <div class="text-sm text-gray-400 mt-1">Automatic Booking</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="scrollToCalendar()" class="px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-neon text-white rounded-full font-bold text-lg shadow-lg hover:shadow-primary-neon/50 transform hover:-translate-y-1 transition-all">
+                    📅 Book Your Free Strategy Call
+                </button>
+                <button onclick="scrollToSection(event, '#services')" class="px-8 py-4 bg-dark-card border-2 border-primary-blue text-white rounded-full font-bold text-lg hover:bg-primary-blue/10 hover:border-primary-neon transform hover:-translate-y-1 transition-all">
+                    ⚡ See How It Works
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark-bg relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-dark-card border border-primary-neon/30 rounded-full text-primary-neon text-sm font-semibold mb-4">
+                    YOUR GROWTH SYSTEM
+                </span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
+                    Ads That Actually<br/>
+                    <span class="gradient-text">Book Estimates</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    No more wasted ad spend. Every campaign is optimized to bring qualified leads directly into your calendar.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Service 1 -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border hover:border-primary-neon/50 transition-all relative overflow-hidden">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-white text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Paid Advertising Management</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        We create and manage high-converting paid ad campaigns on Meta and Google that bring qualified leads ready to book estimates.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Meta & Google Ads management</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Lead generation campaigns</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Ad creative & copywriting</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Landing page optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border hover:border-primary-neon/50 transition-all relative overflow-hidden">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-white text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Automated Estimate Booking System</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        We create a custom calendar booking system that automatically schedules qualified leads directly into your calendar.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-purple-500"></span>Custom booking calendar integration</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-purple-500"></span>Automatic lead qualification</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-purple-500"></span>Direct calendar scheduling</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-purple-500"></span>Seamless workflow automation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border hover:border-primary-neon/50 transition-all relative overflow-hidden">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-white text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Analytics & Performance Tracking</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Track every lead, every ad dollar, and every booked estimate. Real-time dashboards show you exactly what's working.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-green-500"></span>Real-time lead tracking</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-green-500"></span>Cost per qualified lead reporting</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-green-500"></span>Booking conversion analytics</li>
+                        <li class="flex items-center gap-3 text-gray-400"><span class="w-2 h-2 rounded-full bg-green-500"></span>ROI dashboards</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <div class="bg-dark-card rounded-2xl p-8 border border-primary-blue/30 relative overflow-hidden">
+                    <h3 class="text-2xl font-bold text-white mb-3">Ready to Fill Your Calendar with Qualified Estimates?</h3>
+                    <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Book your free strategy call and see exactly how we'll run ads that book qualified leads directly into your calendar.</p>
+                    <button onclick="scrollToCalendar()" class="px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-neon text-white rounded-full font-bold text-lg shadow-lg hover:shadow-primary-neon/50 transform hover:-translate-y-1 transition-all">
+                        Book Your Free Strategy Call →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualifying Questions Section -->
+    <section class="py-24 bg-dark-bg relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-4xl mb-4 block">✨</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                    Let's See If We're A<br/>
+                    <span class="gradient-text">Perfect Match</span>
+                </h2>
+                <p class="text-xl text-gray-300">Answer a few quick questions and we'll show you exactly how we can help fill your calendar</p>
+            </div>
+
+            <div id="questions-container" class="bg-dark-card rounded-2xl p-8 md:p-12 border border-dark-border shadow-2xl">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-dark-bg relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-12">
+                <div>
+                    <span class="inline-block px-4 py-2 bg-dark-card border border-primary-neon/30 rounded-full text-primary-neon text-sm font-semibold mb-8">
+                        ABOUT US
+                    </span>
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight">
+                        We Don't Just Run Ads —<br/>
+                        <span class="gradient-text">We Book Estimates</span>
+                    </h2>
+                    <div class="space-y-6 max-w-4xl mx-auto">
+                        <p class="text-2xl md:text-3xl text-gray-300 leading-relaxed">
+                            Founded by <span class="font-semibold text-white">Daniel Vanarsdale</span>, 
+                            Van Digital Consulting specializes in running paid ad campaigns that actually work.
+                        </p>
+                        <p class="text-2xl md:text-3xl text-gray-300 leading-relaxed">
+                            We don't just get you clicks—we get you qualified estimates booked directly into your calendar.
+                        </p>
+                        <p class="text-2xl md:text-3xl text-gray-300 leading-relaxed">
+                            After seeing too many contractors waste money on ads that don't convert, we built a system 
+                            that runs high-converting campaigns and automatically books qualified leads into your calendar. 
+                            No more waiting for calls that never come. No more tracking down leads. We handle it all.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-center justify-center gap-3 text-primary-neon font-semibold text-xl md:text-2xl mt-10">
+                        <span>⚡</span>
+                        <span>Ads That Actually Book Estimates - Guaranteed</span>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12">
+                    <div class="bg-dark-card rounded-xl p-8 text-center border border-dark-border hover:border-primary-neon/50 transition-all">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">50+</div>
+                        <div class="text-base md:text-lg text-gray-400 font-medium">Clients Helped</div>
+                    </div>
+                    <div class="bg-dark-card rounded-xl p-8 text-center border border-dark-border hover:border-primary-neon/50 transition-all">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">500+</div>
+                        <div class="text-base md:text-lg text-gray-400 font-medium">Estimates Booked</div>
+                    </div>
+                    <div class="bg-dark-card rounded-xl p-8 text-center border border-dark-border hover:border-primary-neon/50 transition-all">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">5X</div>
+                        <div class="text-base md:text-lg text-gray-400 font-medium">ROI Average</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-dark-bg relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-4xl mb-4 block">📅</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
+                    Let's Talk<br/>
+                    <span class="gradient-text">Growth</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Ready to fill your calendar with qualified estimates? Schedule a free strategy call or send us a message.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Calendly -->
+                <div id="calendly-embed" class="bg-dark-card rounded-2xl p-8 border border-dark-border shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-2">Book Your Free Strategy Call</h3>
+                    <p class="text-gray-300 mb-6">Pick a time that works for you.</p>
+                    <div class="rounded-lg overflow-hidden bg-dark-hover" style="min-height: 700px;">
+                        <iframe src="https://calendly.com/vandigitalconsulting/marketing-strategy-call" width="100%" height="700" frameborder="0" class="w-full bg-dark-hover"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-2">Send Us a Message</h3>
+                    <p class="text-gray-300 mb-6">Have questions? Fill out the form below.</p>
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 bg-dark-hover border border-dark-border rounded-lg text-white placeholder-gray-500" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-dark-hover border border-dark-border rounded-lg text-white placeholder-gray-500" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-dark-hover border border-dark-border rounded-lg text-white placeholder-gray-500" placeholder="(555) 123-4567">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea rows="5" required class="w-full px-4 py-3 bg-dark-hover border border-dark-border rounded-lg text-white placeholder-gray-500 resize-none" placeholder="Tell us about your business..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-neon text-white rounded-lg font-bold text-lg shadow-lg hover:shadow-primary-neon/50 transform hover:-translate-y-1 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">
+                        Van Digital Consulting
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Running ads that book qualified estimates. Guaranteed results.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" onclick="scrollToSection(event, '#home')" class="text-gray-400 hover:text-primary-neon transition-colors">Home</a></li>
+                        <li><a href="#services" onclick="scrollToSection(event, '#services')" class="text-gray-400 hover:text-primary-neon transition-colors">Services</a></li>
+                        <li><a href="#about" onclick="scrollToSection(event, '#about')" class="text-gray-400 hover:text-primary-neon transition-colors">About</a></li>
+                        <li><a href="#contact" onclick="scrollToSection(event, '#contact')" class="text-gray-400 hover:text-primary-neon transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">📷</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">🎵</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">💼</a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">▶️</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-dark-border pt-8 text-center">
+                <p class="text-gray-400">© 2025 Van Digital Consulting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll function
+        function scrollToSection(e, selector) {
+            if (e) e.preventDefault();
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function scrollToCalendar() {
+            const element = document.querySelector('#calendly-embed');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Form submitted! In production, this would send via EmailJS.');
+        }
+
+        // Qualifying Questions Logic
+        let currentQuestion = 0;
+        const questions = [
+            {
+                question: "What's your biggest frustration with running paid ads?",
+                options: [
+                    "Ads aren't working - spending money but not getting results",
+                    "Tried ad agencies before and they didn't deliver",
+                    "Getting clicks but not booking qualified estimates",
+                    "Can't track if ads are actually generating bookings",
+                ]
+            },
+            {
+                question: "Have you worked with an ad agency or marketer before?",
+                options: [
+                    "Yes, but they didn't deliver results",
+                    "Yes, and it was too expensive for what we got",
+                    "No, we've tried managing ads ourselves",
+                    "No, but we're ready to find someone who actually works",
+                ]
+            },
+            {
+                question: "How many qualified estimates do you want booked per week?",
+                options: [
+                    "1 estimate per week",
+                    "2 estimates per week",
+                    "4 estimates per week",
+                    "7+ estimates per week",
+                ]
+            },
+            {
+                question: "What's your current monthly ad spend?",
+                options: [
+                    "Not running ads yet - ready to start",
+                    "$500 - $1,500 per month",
+                    "$1,500 - $5,000 per month",
+                    "$5,000+ per month",
+                ]
+            },
+            {
+                question: "What matters most to you?",
+                options: [
+                    "Getting qualified leads that actually book estimates",
+                    "Transparency - seeing exactly what's working",
+                    "Not wasting money on ads that don't convert",
+                    "Automation - leads booking directly into my calendar",
+                ]
+            }
+        ];
+        const answers = {};
+
+        function handleAnswer(questionId, answer) {
+            answers[questionId] = answer;
+            
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function renderQuestion() {
+            const container = document.getElementById('questions-container');
+            const q = questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            
+            container.innerHTML = `
+                <div class="mb-8">
+                    <div class="flex justify-between text-sm text-gray-400 mb-2">
+                        <span>Question ${currentQuestion + 1} of ${questions.length}</span>
+                        <span>${Math.round(progress)}%</span>
+                    </div>
+                    <div class="w-full bg-dark-hover rounded-full h-2 overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary-blue to-primary-neon transition-all duration-300" style="width: ${progress}%"></div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-8">${q.question}</h3>
+                    <div class="space-y-4">
+                        ${q.options.map((option, idx) => `
+                            <button onclick="handleAnswer(${currentQuestion}, '${option.replace(/'/g, "\\'")}')" class="question-option w-full text-left p-6 bg-dark-hover border border-dark-border hover:border-primary-neon/50 rounded-xl transition-all flex items-center gap-4">
+                                <span class="w-6 h-6 border-2 ${answers[currentQuestion] === option ? 'border-primary-neon bg-primary-neon' : 'border-gray-500'} rounded-full flex items-center justify-center">
+                                    ${answers[currentQuestion] === option ? '✓' : ''}
+                                </span>
+                                <span class="text-gray-300 font-medium text-lg flex-1">${option}</span>
+                                <span class="text-gray-500 opacity-0 group-hover:opacity-100">→</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function showResults() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = `
+                <div class="text-center space-y-8">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-blue to-primary-neon rounded-full flex items-center justify-center mx-auto">
+                        <span class="text-white text-4xl">✓</span>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Perfect! We're Ready to Help You Book More Estimates</h3>
+                        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Based on your answers, we're confident we can help you run ads that actually book qualified estimates. 
+                            Let's schedule a free strategy call to show you exactly how.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="scrollToCalendar()" class="px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-neon text-white rounded-full font-bold text-lg shadow-lg hover:shadow-primary-neon/50 transform hover:-translate-y-1 transition-all">
+                            Book Your Free Strategy Call →
+                        </button>
+                        <button onclick="resetQuestions()" class="px-8 py-4 bg-dark-hover border-2 border-dark-border text-white rounded-full font-bold text-lg hover:border-primary-neon transform hover:-translate-y-1 transition-all">
+                            Start Over
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function resetQuestions() {
+            currentQuestion = 0;
+            Object.keys(answers).forEach(key => delete answers[key]);
+            renderQuestion();
+        }
+
+        // Initialize first question
+        renderQuestion();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
+
