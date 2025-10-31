@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Digital Consulting - Ads That Book Estimates</title>
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #3b82f6;
+            --secondary-blue: #2563eb;
+            --accent-blue: #60a5fa;
+            --dark-blue: #1e3a8a;
+            --dark: #0a0f1a;
+            --darker: #050810;
+            --darkest: #000000;
+            --white: #ffffff;
+            --light-gray: #e5e7eb;
+            --medium-gray: #9ca3af;
+            --gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1e40af 100%);
+            --gradient-light: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+            --glow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--darkest);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Background - Enhanced */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, var(--darkest) 0%, var(--darker) 100%);
+            animation: pulse 12s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 1;
+                filter: hue-rotate(0deg);
+            }
+            50% { 
+                opacity: 0.9;
+                filter: hue-rotate(10deg);
+            }
+        }
+
+        /* Advanced Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 6px var(--primary-blue);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(110vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+                transform: translateY(90vh) translateX(20px) rotate(45deg) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(50vh) translateX(100px) rotate(180deg) scale(1.2);
+            }
+            90% {
+                opacity: 0.6;
+                transform: translateY(10vh) translateX(150px) rotate(315deg) scale(1);
+            }
+            100% {
+                transform: translateY(-10vh) translateX(200px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation - Ultra Modern */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 8, 16, 0.85);
+            backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 1.2rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(5, 8, 16, 0.98);
+            box-shadow: 0 8px 40px rgba(59, 130, 246, 0.3);
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            padding: 0.85rem 2.2rem;
+            border-radius: 50px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* Hero Section - Ultra Premium */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10rem 2rem 6rem;
+            z-index: 2;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            animation: pulse-ring 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.2;
+            }
+        }
+
+        .hero-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: shimmer 4s ease-in-out infinite;
+            text-shadow: 0 0 80px rgba(59, 130, 246, 0.3);
+        }
+
+        @keyframes shimmer {
+            0%, 100% { 
+                background-position: 0% 50%;
+                filter: brightness(1);
+            }
+            50% { 
+                background-position: 100% 50%;
+                filter: brightness(1.2);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--light-gray);
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.08);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.1) 100%);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--light-gray);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .hero-btn {
+            padding: 1.2rem 3.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .hero-btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.6);
+        }
+
+        .hero-btn-secondary {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--white);
+            border: 2px solid rgba(59, 130, 246, 0.5);
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.8);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Trusted By Carousel - Enhanced */
+        .trusted-by {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, rgba(10, 15, 26, 0.6) 0%, rgba(5, 8, 16, 0.8) 100%);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        .companies-carousel {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .companies-slider {
+            display: flex;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .company-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 4rem;
+            height: 100%;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .company-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .company-slide.active::before {
+            left: 100%;
+        }
+
+        .company-slide.active {
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+        }
+
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 3rem;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.3);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .dot.active {
+            background: var(--primary-blue);
+            transform: scale(1.3);
+        }
+
+        .dot.active::after {
+            width: 20px;
+            height: 20px;
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .dot:hover {
+            transform: scale(1.2);
+            background: rgba(59, 130, 246, 0.6);
+        }
+
+        /* Services Section - Ultra Modern */
+        .services {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: var(--light-gray);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 30px;
+            padding: 3rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 30px 80px rgba(59, 130, 246, 0.4);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+            font-weight: 800;
+        }
+
+        .service-card p {
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .service-list {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-list li {
+            padding: 0.8rem 0;
+            color: var(--light-gray);
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-list li::before {
+            transform: scale(1.3) rotate(360deg);
+        }
+
+        .service-card:hover .service-list li {
+            color: var(--white);
+            padding-left: 2.5rem;
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text {
+            color: var(--light-gray);
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .about-highlight {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            display: inline-block;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .about-stat {
+            text-align: center;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .about-stat:hover {
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .about-stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .about-stat-label {
+            color: var(--light-gray);
+            margin-top: 0.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Interactive Quiz Section */
+        .questions {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+            background: rgba(10, 15, 26, 0.6);
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .quiz-step {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            display: none;
+            animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .quiz-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .quiz-step.active::before {
+            left: 100%;
+        }
+
+        .quiz-question {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 3rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .quiz-option {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-option::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .quiz-option:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .quiz-option:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: rgba(59, 130, 246, 0.6);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(37, 99, 235, 0.15) 100%);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.2) 100%);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+            transform: scale(1.05);
+        }
+
+        .quiz-option-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .quiz-btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .quiz-btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        .quiz-btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .quiz-btn-secondary {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--white);
+            border: 2px solid rgba(59, 130, 246, 0.5);
+        }
+
+        .quiz-btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.8);
+        }
+
+        .quiz-progress {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--medium-gray);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .quiz-progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 2px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: var(--gradient);
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .quiz-complete {
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .quiz-complete h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-complete p {
+            font-size: 1.3rem;
+            color: var(--light-gray);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .quiz-calendly {
+            margin-top: 3rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, rgba(10, 15, 26, 0.6) 0%, rgba(5, 8, 16, 0.8) 100%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 30px;
+            padding: 2.5rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .review-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 25px 60px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.1) 100%);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviewer-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .reviewer-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .reviewer-info p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: var(--light-gray);
+            line-height: 1.9;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        .review-company {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Calendly Section */
+        .calendly-section {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 2rem;
+            background: rgba(5, 8, 16, 0.9);
+        }
+
+        .calendly-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 2;
+            padding: 5rem 2rem 3rem;
+            background: rgba(5, 8, 16, 0.95);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="particles" id="particles"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Van Digital Consulting</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Book a Call</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>We Run Ads That Book<br>Qualified Estimates<br>Directly Into Your Calendar</h1>
+            <p>Stop wasting money on ads that don't book. We create and manage your paid ad campaigns that bring qualified leads directly into your calendar—automatically.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">More Estimates Booked</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="10" data-suffix=" or less">$0</div>
+                    <div class="stat-label">Cost Per Qualified Lead</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Automatic Booking</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="hero-btn hero-btn-primary">📅 Book Your Free Strategy Call</a>
+                <a href="#services" class="hero-btn hero-btn-secondary">⚡ See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trusted-by">
+        <div class="section-title">Trusted By Industry Leaders</div>
+        <div class="companies-carousel">
+            <div class="companies-slider" id="companiesSlider">
+                <div class="company-slide active">
+                    <div class="company-name">Elite Construction</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Premier Renovations</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Summit Contracting</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Apex Builders</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Crown Remodeling</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Infinity Homes</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Master Builders Inc</div>
+                </div>
+                <div class="company-slide">
+                    <div class="company-name">Signature Contractors</div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header fade-in">
+            <h2>Ads That Actually<br>Book Estimates</h2>
+            <p>No more wasted ad spend. Every campaign is optimized to bring qualified leads directly into your calendar.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <span class="service-icon">🎯</span>
+                <h3>Paid Advertising Management</h3>
+                <p>We create and manage high-converting paid ad campaigns on Meta and Google that bring qualified leads ready to book estimates.</p>
+                <ul class="service-list">
+                    <li>Meta & Google Ads management</li>
+                    <li>Lead generation campaigns</li>
+                    <li>Ad creative & copywriting</li>
+                    <li>Landing page optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card fade-in">
+                <span class="service-icon">📅</span>
+                <h3>Automated Estimate Booking System</h3>
+                <p>We create a custom calendar booking system that automatically schedules qualified leads directly into your calendar.</p>
+                <ul class="service-list">
+                    <li>Custom booking calendar integration</li>
+                    <li>Automatic lead qualification</li>
+                    <li>Direct calendar scheduling</li>
+                    <li>Seamless workflow automation</li>
+                </ul>
+            </div>
+
+            <div class="service-card fade-in">
+                <span class="service-icon">📊</span>
+                <h3>Analytics & Performance Tracking</h3>
+                <p>Track every lead, every ad dollar, and every booked estimate. Real-time dashboards show you exactly what's working.</p>
+                <ul class="service-list">
+                    <li>Real-time lead tracking</li>
+                    <li>Cost per qualified lead reporting</li>
+                    <li>Booking conversion analytics</li>
+                    <li>ROI dashboards</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-header fade-in">
+            <h2>We Don't Just Run Ads —<br>We Book Estimates</h2>
+        </div>
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p><strong>Founded by Daniel Vanarsdale, Van Digital Consulting specializes in running paid ad campaigns that actually work.</strong></p>
+                <p>We don't just get you clicks—we get you qualified estimates booked directly into your calendar.</p>
+                <p>After seeing too many contractors waste money on ads that don't convert, we built a system that runs high-converting campaigns and automatically books qualified leads into your calendar. No more waiting for calls that never come. No more tracking down leads. We handle it all.</p>
+                <span class="about-highlight">⚡ Ads That Actually Book Estimates - Guaranteed</span>
+            </div>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <div class="about-stat-number">50+</div>
+                    <div class="about-stat-label">Clients Helped</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-number">500+</div>
+                    <div class="about-stat-label">Estimates Booked</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-number">5X</div>
+                    <div class="about-stat-label">ROI Average</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-number">100%</div>
+                    <div class="about-stat-label">Automatic</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="questions" id="questions">
+        <div class="section-header fade-in">
+            <h2>Let's See If We're A<br>Perfect Match</h2>
+            <p>Answer a few quick questions and we'll show you exactly how we can help fill your calendar</p>
+        </div>
+        <div class="quiz-container fade-in">
+            <div class="quiz-progress">
+                <span id="quizProgress">Question 1 of 5</span>
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="progressFill" style="width: 20%;"></div>
+                </div>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="quiz-step active" data-step="1">
+                <div class="quiz-question">How many estimates are you currently booking per month?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="0-2">
+                        <div class="quiz-option-text">0-2 estimates</div>
+                    </div>
+                    <div class="quiz-option" data-value="3-5">
+                        <div class="quiz-option-text">3-5 estimates</div>
+                    </div>
+                    <div class="quiz-option" data-value="6-10">
+                        <div class="quiz-option-text">6-10 estimates</div>
+                    </div>
+                    <div class="quiz-option" data-value="10+">
+                        <div class="quiz-option-text">10+ estimates</div>
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <div></div>
+                    <button class="quiz-btn quiz-btn-primary" onclick="nextQuestion()" disabled id="nextBtn1">Next →</button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-step" data-step="2">
+                <div class="quiz-question">What's your average project value?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="under-5k">
+                        <div class="quiz-option-text">Under $5,000</div>
+                    </div>
+                    <div class="quiz-option" data-value="5k-15k">
+                        <div class="quiz-option-text">$5,000 - $15,000</div>
+                    </div>
+                    <div class="quiz-option" data-value="15k-50k">
+                        <div class="quiz-option-text">$15,000 - $50,000</div>
+                    </div>
+                    <div class="quiz-option" data-value="50k+">
+                        <div class="quiz-option-text">$50,000+</div>
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <button class="quiz-btn quiz-btn-secondary" onclick="previousQuestion()">← Back</button>
+                    <button class="quiz-btn quiz-btn-primary" onclick="nextQuestion()" disabled id="nextBtn2">Next →</button>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-step" data-step="3">
+                <div class="quiz-question">What's your biggest challenge with current marketing?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="low-quality">
+                        <div class="quiz-option-text">Low-quality leads</div>
+                    </div>
+                    <div class="quiz-option" data-value="high-cost">
+                        <div class="quiz-option-text">High cost per lead</div>
+                    </div>
+                    <div class="quiz-option" data-value="not-enough">
+                        <div class="quiz-option-text">Not enough bookings</div>
+                    </div>
+                    <div class="quiz-option" data-value="no-system">
+                        <div class="quiz-option-text">No booking system</div>
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <button class="quiz-btn quiz-btn-secondary" onclick="previousQuestion()">← Back</button>
+                    <button class="quiz-btn quiz-btn-primary" onclick="nextQuestion()" disabled id="nextBtn3">Next →</button>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-step" data-step="4">
+                <div class="quiz-question">What service areas do you cover?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="local">
+                        <div class="quiz-option-text">Local (single city/area)</div>
+                    </div>
+                    <div class="quiz-option" data-value="regional">
+                        <div class="quiz-option-text">Regional (multiple cities)</div>
+                    </div>
+                    <div class="quiz-option" data-value="state">
+                        <div class="quiz-option-text">Statewide</div>
+                    </div>
+                    <div class="quiz-option" data-value="national">
+                        <div class="quiz-option-text">National</div>
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <button class="quiz-btn quiz-btn-secondary" onclick="previousQuestion()">← Back</button>
+                    <button class="quiz-btn quiz-btn-primary" onclick="nextQuestion()" disabled id="nextBtn4">Next →</button>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-step" data-step="5">
+                <div class="quiz-question">What's your monthly ad spend right now?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="0">
+                        <div class="quiz-option-text">$0 - Not running ads</div>
+                    </div>
+                    <div class="quiz-option" data-value="1k-3k">
+                        <div class="quiz-option-text">$1,000 - $3,000</div>
+                    </div>
+                    <div class="quiz-option" data-value="3k-10k">
+                        <div class="quiz-option-text">$3,000 - $10,000</div>
+                    </div>
+                    <div class="quiz-option" data-value="10k+">
+                        <div class="quiz-option-text">$10,000+</div>
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <button class="quiz-btn quiz-btn-secondary" onclick="previousQuestion()">← Back</button>
+                    <button class="quiz-btn quiz-btn-primary" onclick="nextQuestion()" disabled id="nextBtn5">See Results →</button>
+                </div>
+            </div>
+
+            <!-- Completion Screen -->
+            <div class="quiz-step quiz-complete" data-step="6">
+                <h3>Perfect! You're a Great Fit</h3>
+                <p>Based on your answers, we can help you book more qualified estimates automatically. Let's schedule a free strategy call to show you exactly how we'll fill your calendar.</p>
+                <div class="quiz-calendly" id="quizCalendlyContainer">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/vandigitalconsulting/marketing-strategy-call" style="min-width:320px;height:700px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="section-header fade-in">
+            <h2>What Contractors Are Saying</h2>
+            <p>Real results from real contractors who've transformed their businesses</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="reviewer-avatar">MJ</div>
+                    <div class="reviewer-info">
+                        <h4>Mike Johnson</h4>
+                        <p>Owner, Johnson Construction</p>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">
+                    "Within 30 days, we went from struggling to fill our calendar to booking 5 estimates a week automatically. Van Digital didn't just run ads—they built a system that works 24/7. Best investment we've made."
+                </div>
+                <div class="review-company">📍 Tampa, FL • 15+ years in business</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="reviewer-avatar">RC</div>
+                    <div class="reviewer-info">
+                        <h4>Robert Chen</h4>
+                        <p>President, Elite Renovations</p>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">
+                    "We were spending $3,000/month on ads with no results. Now we're spending less, booking more, and every lead comes directly into our calendar. The ROI has been incredible. We've booked over 40 estimates in the first 3 months."
+                </div>
+                <div class="review-company">📍 Orlando, FL • 200+ projects completed</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="reviewer-avatar">DW</div>
+                    <div class="reviewer-info">
+                        <h4>David Williams</h4>
+                        <p>Founder, Premier Builders</p>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">
+                    "The automated booking system is a game-changer. I used to spend hours on the phone qualifying leads. Now qualified leads book themselves and I just show up. Our close rate increased 40% because we're only seeing serious buyers."
+                </div>
+                <div class="review-company">📍 Miami, FL • Residential & Commercial</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="reviewer-avatar">SM</div>
+                    <div class="reviewer-info">
+                        <h4>Sarah Martinez</h4>
+                        <p>CEO, Summit Contracting</p>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">
+                    "Before Van Digital, we were missing calls, losing leads, and wasting money. Now we're booked solid and our ad spend is actually making us money. The analytics dashboard shows exactly what's working—transparency like we've never had."
+                </div>
+                <div class="review-company">📍 Jacksonville, FL • High-end custom builds</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="reviewer-avatar">JT</div>
+                    <div class="reviewer-info">
+                        <h4>James Thompson</h4>
+                        <p>Owner, Thompson Remodeling</p>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">
+                    "I was skeptical at first—another marketing company promising the world. But Van Digital delivered. We went from 2-3 estimates a month to 15+ in our first month. The system handles everything, and I can focus on what I do best—building."
+                </div>
+                <div class="review-company">📍 St. Petersburg, FL • 10+ years experience</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="reviewer-avatar">AC</div>
+                    <div class="reviewer-info">
+                        <h4>Amanda Carter</h4>
+                        <p>Managing Partner, Apex Builders</p>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">
+                    "The cost per qualified lead of $10 or less is incredible. We were paying $50-75 per lead before and most weren't even qualified. Now we know exactly what we're paying for and every lead is serious. Game changer for our business."
+                </div>
+                <div class="review-company">📍 Fort Lauderdale, FL • Commercial focus</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calendly-section" id="contact">
+        <div class="section-header fade-in">
+            <h2>Ready to Fill Your Calendar<br>With Qualified Estimates?</h2>
+            <p>Book your free strategy call and see exactly how we'll run ads that book qualified leads directly into your calendar.</p>
+        </div>
+        <div class="calendly-container fade-in">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/vandigitalconsulting/marketing-strategy-call" style="min-width:320px;height:700px;"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="margin-bottom: 2rem; font-size: 2rem;">Van Digital Consulting</div>
+            <p style="color: var(--light-gray); margin-bottom: 2rem; font-size: 1.1rem;">Running ads that book qualified estimates. Guaranteed results.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p style="color: #64748b; margin-top: 3rem; font-size: 0.95rem;">© 2025 Van Digital Consulting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Floating Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 80;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                particle.style.width = (Math.random() * 3 + 2) + 'px';
+                particle.style.height = particle.style.width;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Company Carousel - Enhanced
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.company-slide');
+        const totalSlides = slides.length;
+        let carouselInterval;
+
+        function createDots() {
+            const dotsContainer = document.getElementById('carouselDots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                    resetCarousel();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            const slider = document.getElementById('companiesSlider');
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }
+
+        function resetCarousel() {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextSlide, 3500);
+        }
+
+        // Interactive Quiz System
+        let currentQuizStep = 1;
+        const totalQuizSteps = 5;
+        const quizAnswers = {};
+
+        function updateProgress() {
+            const progress = (currentQuizStep / totalQuizSteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('quizProgress').textContent = `Question ${currentQuizStep} of ${totalQuizSteps}`;
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+            const targetStep = document.querySelector(`.quiz-step[data-step="${step}"]`);
+            if (targetStep) {
+                targetStep.classList.add('active');
+            }
+            if (step === 6) {
+                // Completion screen - show 100% and hide progress
+                document.getElementById('progressFill').style.width = '100%';
+                document.getElementById('quizProgress').textContent = 'Complete!';
+            } else {
+                updateProgress();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuizStep < totalQuizSteps) {
+                currentQuizStep++;
+                showStep(currentQuizStep);
+                disableNextButton(); // Disable until they select an answer
+            } else {
+                // Go to completion screen (step 6)
+                currentQuizStep = 6;
+                showStep(6);
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuizStep > 1) {
+                currentQuizStep--;
+                showStep(currentQuizStep);
+                // Re-enable next button if answer was already selected
+                const currentStepEl = document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`);
+                if (currentStepEl) {
+                    const hasSelected = currentStepEl.querySelector('.quiz-option.selected');
+                    if (hasSelected) {
+                        enableNextButton();
+                    } else {
+                        disableNextButton();
+                    }
+                }
+            }
+        }
+
+        function enableNextButton() {
+            const nextBtn = document.querySelector(`#nextBtn${currentQuizStep}`);
+            if (nextBtn) {
+                nextBtn.disabled = false;
+            }
+        }
+
+        function disableNextButton() {
+            const nextBtn = document.querySelector(`#nextBtn${currentQuizStep}`);
+            if (nextBtn) {
+                nextBtn.disabled = true;
+            }
+        }
+
+        // Handle option selection
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.quiz-option')) {
+                const option = e.target.closest('.quiz-option');
+                const step = option.closest('.quiz-step');
+                const stepNumber = step?.getAttribute('data-step');
+                
+                if (stepNumber && parseInt(stepNumber) <= totalQuizSteps) {
+                    // Remove selected from other options in this step
+                    step.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Add selected to clicked option
+                    option.classList.add('selected');
+                    
+                    // Save answer
+                    const questionText = step.querySelector('.quiz-question').textContent;
+                    const answerText = option.querySelector('.quiz-option-text').textContent;
+                    quizAnswers[stepNumber] = {
+                        question: questionText,
+                        answer: answerText,
+                        value: option.getAttribute('data-value')
+                    };
+                    
+                    // Enable next button
+                    enableNextButton();
+                }
+            }
+        });
+
+        // Animate numbers - Enhanced
+        function animateNumbers() {
+            const stats = document.querySelectorAll('.stat-number');
+            
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const suffix = stat.getAttribute('data-suffix') || '';
+                const duration = 2500;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateNumber = () => {
+                    current += increment;
+                    if (current < target) {
+                        if (stat.textContent.includes('$')) {
+                            stat.textContent = '$' + Math.floor(current) + suffix;
+                        } else if (stat.textContent.includes('%')) {
+                            stat.textContent = Math.floor(current) + '%';
+                        } else {
+                            stat.textContent = Math.floor(current);
+                        }
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        if (stat.textContent.includes('$')) {
+                            stat.textContent = '$' + target + suffix;
+                        } else if (stat.textContent.includes('%')) {
+                            stat.textContent = target + '%';
+                        } else {
+                            stat.textContent = target + 'X';
+                        }
+                    }
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateNumber();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(stat);
+            });
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            fadeObserver.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const cards = document.querySelectorAll('.service-card, .review-card, .stat-card');
+            
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const rate = (rect.top - window.innerHeight / 2) * 0.1;
+                    card.style.transform = `translateY(${rate}px)`;
+                }
+            });
+        });
+
+        // Initialize
+        createParticles();
+        createDots();
+        animateNumbers();
+        resetCarousel();
+        updateProgress(); // Initialize quiz progress
+
+        // Mouse cursor effect (optional enhancement)
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.service-card, .review-card, .stat-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const moveX = (x - centerX) / 20;
+                    const moveY = (y - centerY) / 20;
+                    card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
